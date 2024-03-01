@@ -6,8 +6,8 @@
 
 ### Как я могу помочь
 Если вы хотите помочь, вы можете:
-- Пройти опрос про повторяющиеся ситуации в геймдеве: TODO
-- Или пообщаться по той же теме здесь: https://github.com/superjellie/give-us-components/issues/5
+- Пройти опрос про повторяющиеся ситуации в геймдеве: TODO.
+- Или пообщаться по той же теме [здесь](https://github.com/superjellie/give-us-components/issues/5).
 - Попросить помощи в имплементации той или иной игровой механике или поднять другой топик. [См. шаблоны](https://github.com/superjellie/give-us-components/issues/new/choose).
 - [Присоедениться](https://github.com/superjellie/give-us-components/issues) к какому-то из топиков, если вам кажется что ваше мнение будет полезно.
 
