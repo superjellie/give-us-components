@@ -19,11 +19,18 @@ namespace GiveUsComponents {
         [SerializeField] public bool whenEnterTrigger = false;
         [SerializeField] public LayerMask mask;
 
+        [Header("Gameplay")]
+        [SerializeField] public bool whenFallenOutOfWorld = false;
+        [SerializeField] public float minY = -200f;
+
         IEnumerator Start() {
-            if (this.whenTimeIsOut) {
-                yield return new WaitForSeconds(this.timeout);
-                GameObject.Destroy(this.gameObject, this.destroyTimeout);
-            }
+            var time = Time.time;
+            yield return new WaitUntil(() => 
+                this.whenTimeIsOut && Time.time - time > this.timeout
+            ||  this.whenFallenOutOfWorld 
+                && this.transform.position.y < this.minY
+            );
+            GameObject.Destroy(this.gameObject, this.destroyTimeout);
         }
 
 

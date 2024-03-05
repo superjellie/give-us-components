@@ -403,7 +403,11 @@ MonoBehaviour:
   - {fileID: 3240773240177949445, guid: afb070cec0c1729499378fb6f6173f6d, type: 3}
   pivot: {fileID: 1598291691}
   parent: {fileID: 543281023}
-  spawnRandomly: 0
+  spawnRandomly: 1
+  rngState:
+    seedRandomly: 1
+    value: 43707
+    seeded: 0
   spawnPeriodically: 1
   spawnTimeout: 1
   loop: 1

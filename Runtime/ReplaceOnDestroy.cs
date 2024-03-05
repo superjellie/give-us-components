@@ -12,7 +12,10 @@ namespace GiveUsComponents {
 
 
     // collisions
+        private bool quitting = false; 
+        void OnApplicationQuit() => this.quitting = true; 
         void OnDestroy() {
+            if (this.quitting) return;
             var go = GameObject.Instantiate(this.replaceWith);
             go.transform.SetParent(this.transform.parent);
             go.transform.position = this.transform.position;

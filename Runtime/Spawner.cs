@@ -1,4 +1,4 @@
-// using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +19,7 @@ namespace GiveUsComponents {
 
         [Header("Random")]
         [SerializeField] public bool spawnRandomly = true;
-        // [SerializeField] public GiveUsComponents.RNG.State rngState;
+        [SerializeField] public RNG.State rngState = new RNG.State();
 
         // [Tooptip("Use this as weights for random generation")]
         // [SerializeField] private float[] weights;
@@ -30,14 +30,47 @@ namespace GiveUsComponents {
         [SerializeField] public bool loop;
 
 
-        /* message */ void OnValidate() {
+        /* message */ IEnumerator Start() {
+            if (!this.spawnPeriodically || this.prefabs.Count == 0) yield break;
 
+            do {
+                for (int i = 0; i < this.prefabs.Count; ++i) this.Spawn();
+                yield return new WaitForSeconds(this.spawnTimeout);
+            } while (this.loop);
         }
 
     // public interface
 
-        public GameObject SpawnNext() { return null; } 
-        public T SpawnNext<T>() where T : Component { return null; } 
+        private GameObject Spawn(GameObject prefab) {
+            var go = GameObject.Instantiate(prefab); 
+            if (this.parent != null) go.transform.SetParent(this.parent, false);
+            if (this.pivot != null) {
+                go.transform.position = this.pivot.position;
+                go.transform.rotation = this.pivot.rotation;
+                go.transform.localScale = this.pivot.localScale;
+            }
+            return go;
+        } 
+
+        private int nextSpawnIndex = 0;
+        public GameObject Spawn() {
+            var len = this.prefabs.Count;
+            if (len == 0) return null;
+
+            if (!this.spawnRandomly) {
+                this.nextSpawnIndex = this.nextSpawnIndex % len; 
+                return this.Spawn(this.prefabs[this.nextSpawnIndex]);
+            } 
+
+            var index = RNG.RandInt(this.rngState, 0, len);
+            return this.Spawn(this.prefabs[index]);
+
+        } 
+
+        public T Spawn<T>() where T : Component { 
+            var go = this.Spawn(); 
+            return go != null ? go.GetComponent<T>() : null;
+        } 
 
     }
 

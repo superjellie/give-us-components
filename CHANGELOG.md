@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unrealeased]
 <!-- [unreleased]:  -->
 ### Added
-- component Spawner 
-- component KillMeWhen 
-- component ReplaceOnDestroy 
+- *WIP* Spawner 
+- *WIP* KillMeWhen 
+- *WIP* ReplaceOnDestroy 
 

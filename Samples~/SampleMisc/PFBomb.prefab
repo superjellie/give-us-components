@@ -57,6 +57,8 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 4294967295
+  whenFallenOutOfWorld: 1
+  minY: -200
 --- !u!114 &-1415196124958769690
 MonoBehaviour:
   m_ObjectHideFlags: 0
