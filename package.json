@@ -1,0 +1,13 @@
+{
+  "name": "com.github.give-us-components",
+  "version": "0.0.0",
+  "description": "Search for set of components for game engines specific enough to make games and general enough to not depend on genre or style too strongly.",
+  "displayName": "Give Us Components",
+  "samples": [
+    {
+      "displayName": "Sample Misc",
+      "description": "Contains examples of miscellaneous components",
+      "path": "Samples~/SampleMisc"
+    }
+  ]
+}
