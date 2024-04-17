@@ -11,11 +11,11 @@ namespace GiveUsComponents {
         private Vector3 startPos;
         private Vector3 targetPos;
 
-        void Awake() {
+        /* message */ void Awake() {
             startPos = this.transform.position;
         }
         
-        void Update() {
+        /* message */ void Update() {
             Vector3 pos = Input.mousePosition;
             float dx = 2f * pos.x / Screen.width - 1f;
             float dy = 2f * pos.y / Screen.height - 1f;

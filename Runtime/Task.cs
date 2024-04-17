@@ -57,7 +57,7 @@ namespace GiveUsComponents {
             this.onCancel.Invoke();
         }
 
-        public static new CancelableTask ByCoroutine(
+        public static CancelableTask ByCoroutine(
             MonoBehaviour master, 
             System.Func<CancelationToken, IEnumerator> crtn
         ) {
