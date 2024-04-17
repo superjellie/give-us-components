@@ -1,8 +1,12 @@
 {
-    "name": "GiveUsComponents",
+    "name": "GiveUsComponents.Editor",
     "rootNamespace": "GiveUsComponents",
-    "references": [],
-    "includePlatforms": [],
+    "references": [
+        "GUID:830ee209486de8c48a4ec2d5ac9e4021"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

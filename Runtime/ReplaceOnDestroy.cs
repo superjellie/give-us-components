@@ -3,7 +3,6 @@
 using UnityEngine;
 
 namespace GiveUsComponents {
-
     [AddComponentMenu("GiveUsComponents/Misc/ReplaceOnDestroy", 100)]
     public class ReplaceOnDestroy : MonoBehaviour {
         
@@ -24,5 +23,4 @@ namespace GiveUsComponents {
         } 
 
     }
-
 }

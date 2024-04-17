@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace GiveUsComponents {
-    
     [AddComponentMenu("GiveUsComponents/Misc/Spawner", 100)]
     public class Spawner : MonoBehaviour {
 
@@ -19,7 +18,7 @@ namespace GiveUsComponents {
 
         [Header("Random")]
         [SerializeField] public bool spawnRandomly = true;
-        [SerializeField] public RNG.State rngState = new RNG.State();
+        [SerializeField] public uint rngState = 0xAABB;
 
         // [Tooptip("Use this as weights for random generation")]
         // [SerializeField] private float[] weights;
@@ -62,7 +61,7 @@ namespace GiveUsComponents {
                 return this.Spawn(this.prefabs[this.nextSpawnIndex]);
             } 
 
-            var index = RNG.RandInt(this.rngState, 0, len);
+            var index = RNG.RandInt(ref this.rngState, 0, len);
             return this.Spawn(this.prefabs[index]);
 
         } 
@@ -73,5 +72,4 @@ namespace GiveUsComponents {
         } 
 
     }
-
 }

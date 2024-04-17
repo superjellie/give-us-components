@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 
 namespace GiveUsComponents {
-
     [AddComponentMenu("GiveUsComponents/Misc/KillMeWhen", 100)]
     public class KillMeWhen : MonoBehaviour {
         
@@ -60,5 +59,4 @@ namespace GiveUsComponents {
         }
 
     }
-
 }
