@@ -5,12 +5,12 @@ using GiveUsComponents;
 
 public class CustomTweenTest : MonoBehaviour {
     
-    [SerializeField] Tween.Custom tweener = new Tween.Custom();
-    [SerializeField] float time = 1f;
+    // [SerializeField] Tween.Custom tweener = new Tween.Custom();
+    // [SerializeField] float time = 1f;
 
 
-    /* message */ void Update() {
-        tweener.Evaluate(Mathf.PingPong(Time.time, time));
-    }
+    // /* message */ void Update() {
+    //     tweener.Evaluate(Mathf.PingPong(Time.time, time));
+    // }
 
 }

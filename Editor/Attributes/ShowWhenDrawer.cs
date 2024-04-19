@@ -20,8 +20,9 @@ namespace GiveUsComponents {
 	        if (master == null) return;
 	        if (field.flags && (master.ulongValue & field.value) > 0
 	        || field.flags && !field.bools  && master.ulongValue == field.value
-	        || field.bools && master.boolValue == (field.value > 0))
+	        || field.bools && master.boolValue == (field.value > 0)) {
 	        	EditorGUI.PropertyField(position, property, true);
+	        }
 	    }
 
 	    // public override float GetPropertyHeight(
